@@ -1,7 +1,3 @@
-<!--
-header.php
--->
-
 <!doctype html>
 <html lang="en">
 
@@ -27,7 +23,7 @@ header.php
 		<!-- ============================================================== -->
 		<div class="dashboard-header">
 			<nav class="navbar navbar-expand-lg bg-white fixed-top">
-				<a class="navbar-brand" href="<?= base_url() ?>">SIMDAWA</a>
+				<a class="navbar-brand" href="<?= base_url() ?>">SIMDAWA-APP</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
@@ -41,7 +37,7 @@ header.php
 										John Abraham</h5>
 									<span class="status"></span><span class="ml-2">Available</span>
 								</div>
-								<a class="dropdown-item" href="<?= base_url('login/logout') ?>"><i class="fas fa-power-off mr-2"></i>Logout</a>
+								<a class="dropdown-item" href="<?= base_url('login') ?>"><i class="fas fa-power-off mr-2"></i>Logout</a>
 							</div>
 						</li>
 					</ul>

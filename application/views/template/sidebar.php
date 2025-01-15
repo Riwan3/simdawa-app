@@ -1,7 +1,3 @@
-<!--
-sidebar.php
--->
-
 <div class="nav-left-sidebar sidebar-dark">
 	<div class="menu-list">
 		<nav class="navbar navbar-expand-lg navbar-light">
@@ -24,21 +20,26 @@ sidebar.php
 								<li class="nav-item">
 									<a class="nav-link" href="<?= base_url('beasiswa') ?>">Beasiswa</a>
 								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="<?= base_url('jenis') ?>">Jenis Beasiswa</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="<?= base_url('persyaratan') ?>">Persyaratan</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="<?= base_url('prodi') ?>">Program Studi</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="<?= base_url('pendaftaran') ?>">Pendaftaran Akun</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="<?= base_url('pengguna') ?>">Pengguna</a>
-								</li>
+								<?php if ($this->session->userdata('peran') != 'USER'): ?>
+									<li class="nav-item">
+										<a class="nav-link" href="<?= base_url('jenis') ?>">Jenis Beasiswa</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="<?= base_url('persyaratan') ?>">Persyaratan</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="<?= base_url('prodi') ?>">Program Studi</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="<?= base_url('pendaftaran') ?>">Pendaftaran Akun</a>
+									</li>
+								<?php endif; ?>
+
+								<?php if ($this->session->userdata('peran') == 'ADMIN') : ?>
+									<li class="nav-item">
+										<a class="nav-link" href="<?= base_url('pengguna') ?>">Pengguna</a>
+									</li>
+								<?php endif; ?>
 							</ul>
 						</div>
 					</li>

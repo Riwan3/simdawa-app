@@ -1,7 +1,3 @@
-<!--
-home_view.php
--->
-
 <div class="dashboard-wrapper">
 	<div class="container-fluid dashboard-content">
 		<!-- ============================================================== -->

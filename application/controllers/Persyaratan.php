@@ -11,8 +11,8 @@ class Persyaratan extends CI_Controller
 
 	public function index()
 	{
-		$data['title'] = "Halaman Persyaratan | SIMDAWA-APP";
-		$data['persyaratan'] = $this->PersyaratanModel->get_all();
+		$data['title'] = "Data Persyaratan | SIMDAWA-APP";
+		$data['persyaratan'] = $this->PersyaratanModel->get_persyaratan();
 		$this->load->view('template/header', $data);
 		$this->load->view('template/sidebar');
 		$this->load->view('persyaratan/persyaratan_read', $data);
@@ -22,7 +22,7 @@ class Persyaratan extends CI_Controller
 	public function tambah()
 	{
 		if (isset($_POST['create'])) {
-			$this->PersyaratanModel->insert();
+			$this->PersyaratanModel->insert_persyaratan();
 			redirect('persyaratan');
 		} else {
 			$data['title'] = "Tambah Data Persyaratan | SIMDAWA-APP";
@@ -36,11 +36,11 @@ class Persyaratan extends CI_Controller
 	public function ubah($id)
 	{
 		if (isset($_POST['update'])) {
-			$this->PersyaratanModel->update();
+			$this->PersyaratanModel->update_persyaratan();
 			redirect('persyaratan');
 		} else {
 			$data['title'] = "Perbaharui Data Persyaratan | SIMDAWA-APP";
-			$data['persyaratan'] = $this->PersyaratanModel->get_by_id($id);
+			$data['persyaratan'] = $this->PersyaratanModel->get_persyaratan_byid($id);
 			$this->load->view('template/header', $data);
 			$this->load->view('template/sidebar');
 			$this->load->view('persyaratan/persyaratan_update', $data);
@@ -51,7 +51,7 @@ class Persyaratan extends CI_Controller
 	public function hapus($id)
 	{
 		if (isset($id)) {
-			$this->PersyaratanModel->delete($id);
+			$this->PersyaratanModel->delete_persyaratan($id);
 			redirect('persyaratan');
 		}
 	}
